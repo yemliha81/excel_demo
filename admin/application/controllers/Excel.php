@@ -25,7 +25,7 @@ class Excel extends CI_Controller {
     
 	public function index()
 	{
-		$data['menu'] = '1_1';
+		$data['menu'] = '2_1';
 		$this->load->view('excel/excel_upload_view', $data);
 	   
 	}

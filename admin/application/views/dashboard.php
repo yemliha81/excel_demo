@@ -6,9 +6,7 @@
         <div class="main-content">
             <div class="welcome-div">
                 
-                <div>
-                    <img src="<?php echo FATHER_BASE;?>template/img/koku-life-pdf.svg" width="220px"/>
-                </div>
+                
                 <div class="welcome-msg">Yönetim Paneline Hoş geldiniz!</div>
                 
             </div>

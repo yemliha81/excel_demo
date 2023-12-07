@@ -366,7 +366,7 @@
     <div style="text-align:center;">
         <div>
             <a class="" href="<?php echo FATHER_BASE;?>">
-                <img src="<?php echo FATHER_BASE;?>template/img/koku-life-pdf.svg" width="150px"/>
+                <img src="<?php echo FATHER_BASE;?>template/img/<?php echo $_ENV['LOGO_IMG_NAME'];?>" width="100%"/>
             </a>
         </div>
     </div>

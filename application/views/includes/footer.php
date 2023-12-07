@@ -62,7 +62,7 @@
                         
                         <div class="coppyright">
                             Copyright © 2023
-                            <a href="#">Kokulife</a>
+                            <a href="#">Demo Website</a>
                             Her Hakkı Saklıdır.
                         </div>
                     </div>
