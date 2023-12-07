@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-lg-8 col-sm-8 col-md-6 col-xs-5 col-ts-12" style="text-align:center;">
                     <a href="<?php echo $_ENV['BASE_URL'];?>">
-                        <img src="<?php echo $_ENV['BASE_URL'];?>assets/cam-demo-images/koku-life-logo.svg" alt="img" width="280">
+                        <img src="<?php echo $_ENV['BASE_URL'];?>assets/images/<?php echo $_ENV['LOGO_IMG_NAME'];?>" alt="img" width="280">
                     </a>
                 </div>
                 <div class="col-lg-2 col-sm-2 col-md-3 col-xs-12 col-ts-12">
@@ -65,14 +65,11 @@
                             <li class="menu-item">
                                 <a href="<?php echo $_ENV['BASE_URL'];?>" class="stelina-menu-item-title" title="Home">Anasayfa</a>
                             </li>
-                            <li class="menu-item">
+                            <!--<li class="menu-item">
                                 <a href="<?php echo CATEGORY_LIST;?>" class="stelina-menu-item-title" title="Shop">Kategoriler</a>
-                            </li>
+                            </li>-->
                             <li class="menu-item">
                                 <a href="<?php echo PRODUCT_LIST;?>" class="stelina-menu-item-title" title="Shop">Ürünler</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="<?php echo PAGE_DETAIL.'kullanici-yorumlari';?>" class="stelina-menu-item-title" title="About">KULLANICI YORUMLARI</a>
                             </li>
                             <li class="menu-item">
                                 <a href="<?php echo PAGE_DETAIL.'hakkimizda';?>" class="stelina-menu-item-title" title="About">Hakkımızda</a>
@@ -81,11 +78,11 @@
                                 <a href="<?php echo PAGE_DETAIL.'iletisim';?>" class="stelina-menu-item-title" title="About">İLETİŞİM</a>
                             </li>
                             
-                            <li class="menu-item">
-                                <a target="_blank" href="https://wa.me/+905425441711" class="stelina-menu-item-title" title="About">
+                            <!--<li class="menu-item">
+                                <a target="_blank" href="https://wa.me/+905421111111" class="stelina-menu-item-title" title="About">
                                     <img src="<?php echo $_ENV['BASE_URL'];?>assets/cam-demo-images/whatsapp.svg" width="30px">
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </div>

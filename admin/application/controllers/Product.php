@@ -47,9 +47,9 @@ class Product extends CI_Controller {
 	
 	public function add_product()
 	{
-		$data['categories'] = $this->db->select('*')
+		/*$data['categories'] = $this->db->select('*')
 		    ->where('is_deleted', '0')
-			->get('category_table')->result_array();
+			->get('category_table')->result_array();*/
 
 			//debug($data);
 	    
@@ -91,7 +91,7 @@ class Product extends CI_Controller {
 		//debug($_FILES);
 		
 		//foreach($_SESSION['lang_array'] as $lang){
-	    	$ins['category_id'] = $post['category_id'];
+	    	/*$ins['category_id'] = $post['category_id'];*/
 		    $ins['product_price'] = $post['product_price'];
 		    $ins['product_name_en'] = $post['product_name_en'];
 		    $ins['product_description_en'] = $post['product_description_en'];
@@ -107,15 +107,15 @@ class Product extends CI_Controller {
 			$this->session->set_flashdata('process', 'fail');
 		}
 		
-		redirect(PRODUCT_LIST.$post['category_id']);
+		redirect(PRODUCT_LIST);
 		
 	}
 	
 	public function update_product($id)
 	{
-		$data['categories'] = $this->db->select('*')
+		/*$data['categories'] = $this->db->select('*')
 		    ->where('is_deleted', '0')
-			->get('category_table')->result_array();
+			->get('category_table')->result_array();*/
 
 		$data['product'] = $this->db->select('*')
 			->where('id', $id)
@@ -162,7 +162,7 @@ class Product extends CI_Controller {
 		}
 		
 		//foreach($_SESSION['lang_array'] as $lang){
-		    $upd['category_id'] = $post['category_id'];
+		    /*$upd['category_id'] = $post['category_id'];*/
 		    $upd['product_name_en'] = $post['product_name_en'];
 		    $upd['product_price'] = $post['product_price'];
 		    $upd['product_description_en'] = $post['product_description_en'];

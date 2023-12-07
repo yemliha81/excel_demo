@@ -111,7 +111,7 @@
 		    display: flex;
             flex-direction: column;
             gap: 10px;
-            padding-left: 38px;
+            padding-left: 10px;
             margin-top:20px;
 		}
 		.l-menu .left-a{

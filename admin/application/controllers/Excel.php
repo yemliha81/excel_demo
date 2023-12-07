@@ -55,20 +55,31 @@ class Excel extends CI_Controller {
 		try {
 			$this->db->trans_begin();
 			foreach($products as $key => $product){
-				if($key > 0){
+				if($key > 0 && $product[0]!==NULL){
 					$ins[$key]['product_code'] = $product[0];
 					$ins[$key]['product_name_en'] = $product[1];
 					$ins[$key]['product_description_en'] = $product[2];
 					$ins[$key]['product_price'] = $product[3];
+
+					$checkProduct[$key] = $this->db->select('id')
+						->where('product_code', $product[0])
+						->get('products_table')->row_array();
+					
+					if(!empty($checkProduct[$key])){
+						$this->db->update('products_table', $ins[$key], array('product_code' => $product[0]));
+					}else{
+						$this->db->insert('products_table', $ins[$key]);
+					}
 	
-					$this->db->insert('products_table', $ins[$key]);
+					
 				}
 			}
 			$this->db->trans_commit();
 		  }
 		  catch (Exception $e) {
 			$this->db->trans_rollback();
-			log_message('error', sprintf('%s : %s : DB transaction failed. Error no: %s, Error msg:%s, Last query: %s', __CLASS__, __FUNCTION__, $e->getCode(), $e->getMessage(), print_r($this->main_db->last_query(), TRUE)));
+			echo $e->getMessage();
+			die();
 		  }
 
 		if($this->db->affected_rows() > 0){

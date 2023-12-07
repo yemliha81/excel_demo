@@ -10,64 +10,7 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="banner-wrapp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="banner">
-                            <div class="item-banner style4">
-                                <div class="inner">
-                                    <div class="banner-content">
-                                        <h4 class="stelina-subtitle">SEWOX</h4>
-                                        <h3 class="title">Big Babol Aromalı Dekoratif</h3>
-                                        <div class="description">
-                                            120 Ml Bambu Çubuklu Oda Kokusu
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="banner">
-                            <div class="item-banner style5">
-                                <div class="inner">
-                                    <div class="banner-content">
-                                        <h4 class="stelina-subtitle">SEWOX</h4>
-                                        <h3 class="title">Limon Aromalı Oda Kokusu</h3>
-                                        <div class="description">
-                                            120 Ml Bambu Çubuklu Oda Kokusu
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="banner-wrapp rows-space-65">
-            <div class="container">
-                <div class="banner">
-                    <div class="item-banner style17">
-                        <div class="inner">
-                            <div class="banner-content">
-                                <h3 class="title">Hoş geldiniz!</h3>
-                                <div class="description">
-                                    Birbirinden güzel ve çeşitli<br> 
-                                    ürünlerimizi incelemek ve satın almak için<br> 
-                                    bize ulaşın.
-                                </div>
-                                <div class="banner-price">
-                                    
-                                </div>
-                                <a href="<?php echo PRODUCT_LIST;?>" class="button btn-shop-now">Ürünleri İncele</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="stelina-tabs  default rows-space-40">
             <div class="container">
                 <div class="tab-head">
@@ -96,7 +39,11 @@
                                         <div class="product-thumb">
                                             <div class="thumb-inner">
                                                 <a href="<?php echo $_ENV['BASE_URL'].'urun-detay/'.$product['id'];?>">
-                                                    <img src="<?php echo $_ENV['BASE_URL'];?>admin/files/product/img/400/<?php echo $product['product_image'];?>" alt="img">
+                                                    <?php if(empty($product['product_image'])){ ?>
+                                                        <img src="https://place-hold.it/300x400" alt="img">
+                                                    <?php }else{ ?>
+                                                        <img src="<?php echo $_ENV['BASE_URL'];?>admin/files/product/img/400/<?php echo $product['product_image'];?>" alt="img">
+                                                    <?php } ?>
                                                 </a>
                                                 <div class="thumb-group">
                                                     <div class="yith-wcwl-add-to-wishlist">

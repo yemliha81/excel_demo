@@ -22,7 +22,11 @@
                                         <div class="product-thumb">
                                             <div class="thumb-inner">
                                                 <a href="<?php echo $_ENV['BASE_URL'].'urun-detay/'.$product['id'];?>">
-                                                    <img src="<?php echo $_ENV['BASE_URL'];?>admin/files/product/img/400/<?php echo $product['product_image'];?>" alt="img">
+                                                    <?php if(empty($product['product_image'])){ ?>
+                                                        <img src="https://place-hold.it/300x400" alt="img">
+                                                    <?php }else{ ?>
+                                                        <img src="<?php echo $_ENV['BASE_URL'];?>admin/files/product/img/400/<?php echo $product['product_image'];?>" alt="img">
+                                                    <?php } ?>
                                                 </a>
                                                 <div class="thumb-group">
                                                     <div class="yith-wcwl-add-to-wishlist">

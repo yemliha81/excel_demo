@@ -27,7 +27,11 @@
         </div>
         <div class="product_details">
             <div class="product_img">
+            <?php if(empty($product['product_image'])){ ?>
+                <img src="https://place-hold.it/300x400" alt="img">
+            <?php }else{ ?>
                 <img src="<?php echo $_ENV['BASE_URL'];?>admin/files/product/img/400/<?php echo $product['product_image'];?>" alt="img">
+            <?php } ?>
             </div>
             <div class="product_info">
                 <div class="product_name info_box"><?php echo $product['product_name_en'];?></div>
