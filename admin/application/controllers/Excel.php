@@ -25,15 +25,13 @@ class Excel extends CI_Controller {
     
 	public function index()
 	{
-
-		$this->load->view('excel/excel_upload_view');
+		$data['menu'] = '1_1';
+		$this->load->view('excel/excel_upload_view', $data);
 	   
 	}
 
 	public function upload_file()
 	{
-
-		
 
 		$upload_file = $_FILES['upload_file']['name'];
 		$extension = pathinfo($upload_file, PATHINFO_EXTENSION);
@@ -50,7 +48,36 @@ class Excel extends CI_Controller {
 		
 		//$spreadsheet = $reader->load(DOC_ROOT . '/files/excel/test.xlsx');
 
-		debug($spreadsheet->getActiveSheet()->toArray());
+		$products = $spreadsheet->getActiveSheet()->toArray();
+
+		//debug($products);
+
+		try {
+			$this->db->trans_begin();
+			foreach($products as $key => $product){
+				if($key > 0){
+					$ins[$key]['product_code'] = $product[0];
+					$ins[$key]['product_name_en'] = $product[1];
+					$ins[$key]['product_description_en'] = $product[2];
+					$ins[$key]['product_price'] = $product[3];
+	
+					$this->db->insert('products_table', $ins[$key]);
+				}
+			}
+			$this->db->trans_commit();
+		  }
+		  catch (Exception $e) {
+			$this->db->trans_rollback();
+			log_message('error', sprintf('%s : %s : DB transaction failed. Error no: %s, Error msg:%s, Last query: %s', __CLASS__, __FUNCTION__, $e->getCode(), $e->getMessage(), print_r($this->main_db->last_query(), TRUE)));
+		  }
+
+		if($this->db->affected_rows() > 0){
+			$this->session->set_flashdata('process', 'success');
+		}else{
+			$this->session->set_flashdata('process', 'fail');
+		}
+		
+		redirect(PRODUCT_LIST);
 	   
 	}
 	
