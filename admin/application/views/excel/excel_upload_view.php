@@ -41,8 +41,11 @@
     						</div>
 							<form action="<?php echo UPLOAD_EXCEL_POST;?>" method="post" enctype="multipart/form-data">
 								<div class="m-b-20 menu-form">
+                                    <div>
+                                        Örnek Excel dosyasını indirmek için <a href="<?php echo $_ENV['BASE_URL'];?>files/excel/ornek-urun-dosyasi.xlsx" download>BURAYA</a> tıklayınız.
+                                    </div>
 									<div>
-    									<input class="input_style " type="file" name="upload_file"/>
+    									<input class="input_style " type="file" name="upload_file" required/>
 									</div>
 									
 									<div class="menu-form-2">
