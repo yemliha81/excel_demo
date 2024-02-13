@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require 'vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 
 class Excel extends CI_Controller {
@@ -28,6 +28,22 @@ class Excel extends CI_Controller {
 		$data['menu'] = '2_1';
 		$this->load->view('excel/excel_upload_view', $data);
 	   
+	}
+
+	public function write_to_file(){
+
+		$spreadsheet = new Spreadsheet();
+		$activeWorksheet = $spreadsheet->getActiveSheet();
+		$activeWorksheet->setCellValue('A1', 'Hello !');
+		$activeWorksheet->setCellValue('A2', 'Hello !');
+		$activeWorksheet->setCellValue('A3', 'Hello !');
+		$activeWorksheet->setCellValue('A4', 'Hello !');
+		$activeWorksheet->setCellValue('A5', 'Hello !');
+
+		$writer = new Xlsx($spreadsheet);
+		$writer->save(FCPATH.'excel_files/hello_world.xlsx');
+
+		echo "done";
 	}
 
 	public function upload_file()
