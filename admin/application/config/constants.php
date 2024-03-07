@@ -158,3 +158,4 @@ define( 'HIDE_BANNER', FATHER_BASE.'banner/hide_banner/' );
 
 define( 'UPLOAD_EXCEL', FATHER_BASE.'excel/index/' );
 define( 'UPLOAD_EXCEL_POST', FATHER_BASE.'excel/upload_file/' );
+define( 'READ_FILE', FATHER_BASE.'excel/read_file/' );

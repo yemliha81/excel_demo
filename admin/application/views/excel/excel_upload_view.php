@@ -39,7 +39,7 @@
     							</div>
     							
     						</div>
-							<form action="<?php echo UPLOAD_EXCEL_POST;?>" method="post" enctype="multipart/form-data">
+							<form action="<?php echo READ_FILE;?>" method="post" enctype="multipart/form-data">
 								<div class="m-b-20 menu-form">
                                     <div>
                                         Örnek Excel dosyasını indirmek için <a href="<?php echo $_ENV['BASE_URL'];?>files/excel/ornek-urun-dosyasi.xlsx" download>BURAYA</a> tıklayınız.
