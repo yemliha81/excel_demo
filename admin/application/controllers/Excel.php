@@ -33,6 +33,8 @@ class Excel extends CI_Controller {
 
 	public function write_to_file(){
 
+		//Test mesajı
+
 		//$fields = $this->db->field_data('products_table');
 
 		//debug($fields);
